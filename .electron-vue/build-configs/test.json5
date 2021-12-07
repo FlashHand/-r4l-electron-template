@@ -1,0 +1,57 @@
+{
+  "productName": "r4l模板",
+  "appId": "com.r4l.app",
+  "artifactName": "${productName}-${os}-${arch}.${ext}",
+  "afterSign": "build/assets/notarize.js",
+  "extraResources": [
+    "static/**"
+  ],
+  "directories": {
+    "output": "build"
+  },
+  "files": [
+    "dist/electron/**/*"
+  ],
+  //  "publish": [
+  //    {
+  //      "provider": "generic",
+  //      "url": "https://www.google.com"
+  //    }
+  //  ],
+  "asarUnpack": "{static/natives/**/*,static/natives/**/**/*,static/natives/*}",
+  "dmg": {
+    "contents": [
+      {
+        "x": 410,
+        "y": 150,
+        "type": "link",
+        "path": "/Applications"
+      },
+      {
+        "x": 130,
+        "y": 150,
+        "type": "file"
+      }
+    ]
+  },
+  "nsis": {
+    "oneClick": true,
+    "perMachine": true,
+    "include": "build/installer.nsh",
+    "createStartMenuShortcut": true,
+    "createDesktopShortcut": true,
+    "allowElevation": true,
+    "runAfterFinish": true,
+    "license": "build-configs/default.license.html"
+  },
+  "win": {
+    "icon": "build/icons/default.png",
+    "target": "nsis",
+    "requestedExecutionLevel": "requireAdministrator",
+    //    "certificateFile": "***.pfx",
+    //    "signingHashAlgorithms": ["sha256"],
+    //    "signDlls": true,
+    //    "rfc3161TimeStampServer": "http://sha256timestamp.ws.symantec.com/sha256/timestamp",
+    //    "certificatePassword": ""
+  }
+}

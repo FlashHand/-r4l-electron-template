@@ -1,0 +1,89 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "node": true
+  },
+  "parser": "vue-eslint-parser",
+  "extends": [
+    "eslint:recommended",
+//    "plugin:vue/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "ignorePatterns": [
+    "**/**.ejs",
+    "**/**.js"
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+//    "@typescript-eslint/explicit-member-accessibility": [
+//      "error",
+//      {
+//        "accessibility": "explicit",
+//        "overrides": {
+//          "accessors": "explicit",
+//          "constructors": "no-public",
+//          "methods": "explicit",
+//          "properties": "explicit",
+//          "parameterProperties": "explicit"
+//        }
+//      }
+//    ],
+    "no-tabs": [
+      "warn",
+      {
+        "allowIndentationTabs": true
+      }
+    ],
+    "vue/comment-directive": "off",
+    "no-prototype-builtins": "off",
+    "no-ex-assign": "off",
+    "no-console": "off",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "indent": [
+      "error",
+      "tab",
+      {
+        "SwitchCase": 1
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/**.vue"
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "no-public"
+          }
+        ],
+        "no-undef": "off"
+      }
+    }
+  ],
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "ecmaVersion": 11,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  }
+}

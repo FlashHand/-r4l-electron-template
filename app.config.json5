@@ -1,0 +1,30 @@
+//渲染进程配置文件
+//字段说明
+//root:各进程代码所在的根目录，默认src/renderers
+//renderers:进程配置文件数组
+//name[string]:进程名，与进程在renderers目录下的目录名一致，可用于找到该进程代码的文件，如src/renderers/{name}
+//show[boolean]:进程的窗口是否显示，对应BrowserWindowConstructorOptions.show
+//devPort[number]:调试时的端口
+//height[number]:窗口默认打开的高度
+//width[number]:窗口默认打开的宽度
+//minHeight[number]:窗口的最小高度
+//minWidth[number]:窗口的最小宽度
+//devDisable[number]:调试时是否禁止该进程随应用启动,默认为false
+//launch[boolean]:exe启动时，伴随启动的渲染进程，默认为false
+
+{
+  renderersPath: 'src/renderers',
+  renderers: [
+    {
+      name: 'hello-world',
+      show: true,
+      devDisable: false,
+      frame: true,
+      height: 800,
+      width: 1280,
+      devPort: 12803,
+      minHeight: 700,
+      minWidth: 1280
+    }
+  ]
+}
